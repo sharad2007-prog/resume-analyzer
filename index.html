@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Resume Analyzer</h1>
+      <p class="sub">Upload your resume and paste a job description to see how well they match.</p>
+    </header>
+
+    <form id="form" class="card">
+      <label for="resume">Resume (PDF)</label>
+      <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+      <label for="jd">Job description</label>
+      <textarea id="jd" name="job_description" rows="9" placeholder="Paste the job description here..." required></textarea>
+
+      <button type="submit" id="btn">Analyze</button>
+      <p id="error" class="error" hidden></p>
+    </form>
+
+    <section id="results" class="card" hidden>
+      <div class="score-row">
+        <div class="score-circle"><span id="score">0</span><small>/100</small></div>
+        <div class="stats">
+          <p>Text similarity: <strong id="similarity">0</strong>%</p>
+          <p>Keyword coverage: <strong id="coverage">0</strong>%</p>
+        </div>
+      </div>
+
+      <h2>Matched keywords</h2>
+      <div id="matched" class="chips green"></div>
+
+      <h2>Missing keywords</h2>
+      <div id="missing" class="chips red"></div>
+
+      <h2>Suggestions</h2>
+      <ul id="tips"></ul>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
