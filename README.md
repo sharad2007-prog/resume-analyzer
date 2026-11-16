@@ -38,3 +38,8 @@ resume-analyzer/
 - Section detection (education, projects, experience)
 - Save past analyses with a database and user login
 - Deploy on Render or Railway
+
+🚀 **[Live Demo](https://resume-analyzer-ci3b.onrender.com)**
+
+💻 **[GitHub Repository](https://github.com/sharad2007-prog/resume-analyzer/tree/main)**
+
